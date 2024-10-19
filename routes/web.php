@@ -9,6 +9,9 @@ Route::get('/', function () {
 
 Route::prefix('operator')->group(function () {
     Route::get('/dashboard', [OperatorController::class, 'index'])->name('operator.index');
-    Route::get('/upload', [OperatorController::class, 'upload'])->name('operator.upload');
-    Route::post('/edit', [OperatorController::class, 'edit'])->name('operator.edit');
+    // Route::get('/upload', [OperatorController::class, 'upload'])->name('operator.upload');
+    Route::get('/{id}/edit', [OperatorController::class, 'edit'])->name('operator.edit');
+    Route::put('/{id}/edit', [OperatorController::class, 'update'])->name('operator.update');
+    // Route::get('admin/wiup/{id}/edit', [AdminIUPController::class, 'wiupEdit'])->name('admin.wiup.edit');
+    // Route::put('admin/wiup/{id}/edit', [AdminIUPController::class, 'wiupUpdate'])->name('admin.wiup.update');
 });

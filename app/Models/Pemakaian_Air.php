@@ -23,6 +23,8 @@ class Pemakaian_Air extends Model
         'kubikasi',
     ];
 
+    public $timestamps = false;
+
     public function warga()
     {
         return $this->belongsTo(Warga::class, 'warga_id', 'warga_id');
