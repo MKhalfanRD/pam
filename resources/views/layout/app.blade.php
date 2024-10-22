@@ -32,10 +32,25 @@
                     <h1 class="text-xl text-white font-semibold">PDAM</h1>
                 </div>
                 <ul class="flex gap-10">
+                    {{-- admin --}}
+                    @if($role == 'admin')
                     <li class="font-bold text-sm text-gray-400"><a href="#">Home</a></li>
                     <li class="font-bold text-sm text-gray-400"><a href="#">About</a></li>
                     <li class="font-bold text-sm text-gray-400"><a href="#">Business</a></li>
                     <li class="font-bold text-sm text-gray-400"><a href="#">Services</a></li>
+                    {{-- operator --}}
+                    @elseif ($role == 'operator')
+                    <li class="font-bold text-sm text-gray-400"><a href="{{route('operator.index')}}">Home</a></li>
+                    <li class="font-bold text-sm text-gray-400"><a href="{{route('operator.history')}}">History</a></li>
+                    <li class="font-bold text-sm text-gray-400"><a href="#">Business</a></li>
+                    <li class="font-bold text-sm text-gray-400"><a href="#">Services</a></li>
+                    {{-- warga --}}
+                    @elseif($role == 'warga')
+                    <li class="font-bold text-sm text-gray-400"><a href="#">Home</a></li>
+                    <li class="font-bold text-sm text-gray-400"><a href="#">About</a></li>
+                    <li class="font-bold text-sm text-gray-400"><a href="#">Business</a></li>
+                    <li class="font-bold text-sm text-gray-400"><a href="#">Services</a></li>
+                    @endif
                 </ul>
             </div>
         </div>
@@ -43,6 +58,8 @@
         <div class="fixed bottom-0 right-0 left-0 p-4 lg:hidden bg-indigo-600 z-50" x-show="navOpen"
             x-transition.duration.500ms>
             <ul class="flex justify-between">
+                {{-- admin --}}
+                @if($role == 'admin')
                 <li>
                     <button class="flex flex-col items-center gap-1">
                         <span class="font-bold text-base text-white">Home</span>
@@ -63,6 +80,55 @@
                         <span class="font-normal text-base text-white">Services</span>
                     </button>
                 </li>
+                {{-- operator --}}
+                @elseif($role == 'operator')
+                <li>
+                    <button class="flex flex-col items-center gap-1">
+                        <a href="{{route('operator.index')}}">
+                            <span class="font-bold text-base text-white">Home</span>
+                        </a>
+                    </button>
+                </li>
+                <li>
+                    <button class="flex flex-col items-center gap-1">
+                        <a href="{{route('operator.history')}}">
+                            <span class="font-normal text-base text-white">History</span>
+                        </a>
+                    </button>
+                </li>
+                <li>
+                    <button class="flex flex-col items-center gap-1">
+                        <span class="font-normal text-base text-white">Business</span>
+                    </button>
+                </li>
+                <li>
+                    <button class="flex flex-col items-center gap-1">
+                        <span class="font-normal text-base text-white">Services</span>
+                    </button>
+                </li>
+                {{-- warga --}}
+                @elseif($role == 'warga')
+                <li>
+                    <button class="flex flex-col items-center gap-1">
+                        <span class="font-bold text-base text-white">Home</span>
+                    </button>
+                </li>
+                <li>
+                    <button class="flex flex-col items-center gap-1">
+                        <span class="font-normal text-base text-white">About</span>
+                    </button>
+                </li>
+                <li>
+                    <button class="flex flex-col items-center gap-1">
+                        <span class="font-normal text-base text-white">Business</span>
+                    </button>
+                </li>
+                <li>
+                    <button class="flex flex-col items-center gap-1">
+                        <span class="font-normal text-base text-white">Services</span>
+                    </button>
+                </li>
+                @endif
             </ul>
         </div>
     </nav>

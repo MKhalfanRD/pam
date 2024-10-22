@@ -9,7 +9,7 @@
                 <h2 class="text-2xl font-bold text-center mb-4">Upload Foto</h2>
 
                 <!-- Input untuk Bulan dan Tahun -->
-                <div class="flex flex-row gap-6 mb-4">
+                {{-- <div class="flex flex-row gap-6 mb-4">
                     <div>
                         <select name="bulan" id="bulan" class="bg-gray-200 rounded-md text-black">
                             @foreach ($bulan as $key => $namaBulan)
@@ -28,7 +28,7 @@
                             @endforeach
                         </select>
                     </div>
-                </div>
+                </div> --}}
 
                 <!-- Input Pemakaian Lama -->
                 <div class="mb-4">
