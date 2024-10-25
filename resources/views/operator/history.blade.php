@@ -4,7 +4,7 @@
 <div class="flex flex-col justify-between items-center mb-4">
     <h1 class="text-2xl font-bold mb-4">Riwayat Air Per Bulan</h1>
     <form action="{{ route('operator.history') }}" method="GET" class="mb-4 gap-4 flex items-center justify-center">
-        <input type="search" name="search" value="{{ request('search') }}" placeholder="Cari berdasarkan nama atau blok..." class="border rounded px-3 py-2 text-white">
+        <input type="search" name="search" value="{{ request('search') }}" placeholder="Cari nama atau blok..." class="border rounded px-3 py-2 text-white">
         <button type="submit" class="bg-indigo-600 text-white px-5 py-2 rounded-lg">Cari</button>
 
         <!-- Hidden input untuk mempertahankan bulan dan tahun yang dipilih -->

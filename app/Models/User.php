@@ -7,7 +7,7 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Database\Eloquent\Model;
 
-class Users extends Model
+class User extends Authenticatable
 {
     use HasFactory;
 
@@ -25,6 +25,8 @@ class Users extends Model
     protected $casts = [
         'role' => 'string',
     ];
+
+    public $timestamps = false;
 
     public function warga()
     {

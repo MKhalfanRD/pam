@@ -59,7 +59,7 @@
             x-transition.duration.500ms>
             <ul class="flex justify-between">
                 {{-- admin --}}
-                @if($role == 'admin')
+                @if(Auth::user()->role == 'admin')
                 <li>
                     <button class="flex flex-col items-center gap-1">
                         <span class="font-bold text-base text-white">Home</span>
@@ -81,7 +81,7 @@
                     </button>
                 </li>
                 {{-- operator --}}
-                @elseif($role == 'operator')
+                @elseif(Auth::user()->role == 'operator')
                 <li>
                     <button class="flex flex-col items-center gap-1">
                         <a href="{{route('operator.index')}}">
@@ -107,7 +107,7 @@
                     </button>
                 </li>
                 {{-- warga --}}
-                @elseif($role == 'warga')
+                @elseif(Auth::user()->role == 'warga')
                 <li>
                     <button class="flex flex-col items-center gap-1">
                         <span class="font-bold text-base text-white">Home</span>

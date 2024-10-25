@@ -23,7 +23,7 @@ class Validasi_Pembayaran extends Model
 
     public function admin()
     {
-        return $this->belongsTo(Users::class, 'admin_id', 'admin_id');
+        return $this->belongsTo(User::class, 'admin_id', 'admin_id');
     }
 
     public function pembayaran()
